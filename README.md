@@ -8,7 +8,7 @@ How to use
 0. install nodeJS ,then
 ``sudo npm install -g trafficrecorder``
 
-0. start recorder by ``tr <dir>`` or ``trafficrecorder <dir>``, here **dir** is the folder you want to save your file 
+0. start recorder by ``tr <dir>`` or ``trafficrecorder <dir>``, here **dir** is the folder where you want to save data
 
 0. set proxy to **http://127.0.0.1:8001**
 

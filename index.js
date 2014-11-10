@@ -9,7 +9,7 @@ var fs       = require("fs"),
     program  = require('commander'),
     info     = require("./package.json");
 
-if(process.argv.length <= 1 || /\.js$/.test(process.argv[process.argv.length - 1]) ){
+if(process.argv.length <= 2){
     console.log("usage : tr <dir>");
     process.exit();
 }
@@ -17,7 +17,7 @@ if(process.argv.length <= 1 || /\.js$/.test(process.argv[process.argv.length - 1
 var userSavePath = path.resolve(process.cwd(), process.argv[process.argv.length - 1]);
 var recorderRule = {
     summary:function(){
-        return "A tool to save all traffic data";
+        return "";
     },
 
     fetchTrafficData: function(id,info){
@@ -36,6 +36,9 @@ var options = {
     rule                : recorderRule,
     disableWebInterface : true
 };
+
+console.log("your records will be saved at :" + userSavePath);
+console.log("please assign the following proxy for your browser");
 new proxy.proxyServer(options);
 
 
